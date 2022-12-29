@@ -1,0 +1,15 @@
+name: PR comments
+on:
+  pull_request:
+    branches: [ "main" ]
+  issue_comment:
+    types: [created, deleted]
+jobs:
+  prcomment:
+    name: Read PR Comments
+    runs-on: ubuntu-latest
+    steps:
+    - run: gem install octokit -v 4.15.0 --user-install
+    - uses: actions/checkout@v3
+    - run: ruby -r ./.github/workflows/octokit.rb
+    - run: sh ./.github/workflows/datetime.sh
