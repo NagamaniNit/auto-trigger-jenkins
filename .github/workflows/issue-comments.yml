@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger your-job
-        uses: appleboy/jenkins-action@master
+        uses: appleboy/jenkins-action@main
         with:
           url: "http://44.204.171.118:8080/"
           user: ${{ secrets.JENKINS_USER }}
