@@ -4,8 +4,6 @@ on:
     branches: [ "main" ]
   issue_comment:
     types: [created, deleted]
-  pull_request_review:
-    types: [edited, dismissed]
 jobs:
   pr_commented:
     # This job only runs for pull request comments
@@ -30,4 +28,4 @@ jobs:
           url: "http://44.204.31.130:8080"
           user: ${{ secrets.JENKINS_USER }}
           token: ${{ secrets.JENKINS_TOKEN }}
-          job: "AutoTriggerJob-Comment/PR-5"
+          job: format('AutoTriggerJob-Comment/PR-{0}',${{github.event.number}})
