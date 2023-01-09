@@ -30,5 +30,5 @@ jobs:
           url: "http://44.204.31.130:8080"
           user: ${{ secrets.JENKINS_USER }}
           token: ${{ secrets.JENKINS_TOKEN }}
-        #  job: "AutoTriggerJob-Comment/PR-5"
+          job: "AutoTriggerJob-Comment"
           issue-number: ${{ steps.find-pull-request.outputs.number }}
