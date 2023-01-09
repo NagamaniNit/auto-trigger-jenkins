@@ -20,7 +20,7 @@ jobs:
   jenkins_trigger:
     name: Trigger Jenkins Job
     runs-on: ubuntu-latest
-    needs: [pr_commented]
+    needs: pr_commented
     steps:
       - name: Trigger your-job
         uses: appleboy/jenkins-action@master
