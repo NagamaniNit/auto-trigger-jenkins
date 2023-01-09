@@ -29,3 +29,6 @@ jobs:
           user: ${{ secrets.JENKINS_USER }}
           token: ${{ secrets.JENKINS_TOKEN }}
           job: format('AutoTriggerJob-Comment/PR-{0}', $NUMBER)
+    env:
+        NUMBER: ${{ github.event.issue.number }}
+        COMMENT: ${{ github.event.comment.body }}
