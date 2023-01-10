@@ -28,4 +28,4 @@ jobs:
           url: "http://52.202.114.6:8080"
           user: ${{ secrets.JENKINS_USER }}
           token: ${{ secrets.JENKINS_TOKEN }}
-          job: "AutoTriggerJob-Comment/PR-$Number"
+          job: "AutoTriggerJob-Comment/PR-${{ github.event.issue.number }}"
